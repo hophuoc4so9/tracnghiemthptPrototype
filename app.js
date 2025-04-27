@@ -9,8 +9,7 @@ import indexClient from "./routes/client/index.route.js";
 import indexTeacher from "./routes/teacher/index.route.js";
 connect();
 const app = express();
-
-
+;
 // Configure CORS
 
 app.use(express.json());

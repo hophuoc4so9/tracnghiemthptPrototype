@@ -36,7 +36,6 @@ export const index = async (req, res) => {
     const totalPage = Math.ceil(totalItems / limitItems);
     const exams = await Exam.find(condition)
       .populate("questions")
-      .populate("listeningExams") // Add this line
       .limit(limitItems)
       .skip(skip);
     const data = {
@@ -69,7 +68,6 @@ export const detailExam = async (req, res) => {
     // }
     const exam = await Exam.findOne({ slug })
       .populate("questions")
-      .populate("listeningExams"); // Add this line
     if (!exam) {
       return res.status(404).json({ message: "Exam not found" });
     }
@@ -144,18 +142,6 @@ export const joinedExam = async (req, res) => {
       };
     });
 
-    // Đảo thứ tự bài nghe và câu hỏi của từng bài nghe
-    const shuffledListeningExams = exam.listeningExams.map((listeningExam) => {
-      return {
-        ...listeningExam.toObject(),
-        questions: shuffleArray(listeningExam.questions).map(
-          (listeningQuestion) => ({
-            ...listeningQuestion.toObject(),
-            options: shuffleArray(listeningQuestion.options),
-          })
-        ),
-      };
-    });
 
     // Tạo kết quả mới với thời gian kết thúc dựa trên thời lượng của đề thi
     const endTime = new Date();
@@ -179,7 +165,6 @@ export const joinedExam = async (req, res) => {
       description: exam.description,
       duration: exam.duration,
       questions: shuffledQuestions,
-      listeningExams: shuffledListeningExams,
       readingQuestion: readingQuestionsArray,
       resultId: result._id,
     });
