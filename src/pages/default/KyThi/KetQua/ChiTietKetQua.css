@@ -1,0 +1,6 @@
+/* Override font-size trong nội dung HTML có inline style */
+.custom-question-content,
+.custom-question-content * {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}

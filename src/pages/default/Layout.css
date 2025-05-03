@@ -1,0 +1,343 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+  
+#main {
+    overflow: hidden;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+  
+#header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    padding: 10px 20px;            
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+  
+@media (min-width: 1400px) {
+    .container {
+      max-width: 100%;
+    }
+}
+
+
+.fw-bold{
+  font-weight: bold;
+  font-size: 3rem; /* Tăng kích thước tiêu đề */
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+  word-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: animate 10s linear infinite;
+}
+
+.my-5{
+    margin-top: 10px !important; 
+    margin-bottom: 0px !important;
+}
+#logo img {
+    width: 120px;  
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;  
+    padding: 0;
+    margin: 0;
+}
+.nav a {
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+}
+.nav a:hover {
+    color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transform: scale(1.1); 
+}
+  
+.nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    transition: width 0.3s ease;
+}
+  
+.nav a:hover::before {
+    width: 100%; 
+}
+
+.nav-dn {
+    font-size: 16px; 
+    font-weight: 600; 
+    text-align: center; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+}
+
+#menu {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+}
+  
+.dsMenu {
+    list-style-type: none;
+    padding: 0;
+    gap: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+  
+.dsMenu li {
+    margin: 0 15px;
+    display: inline-block;
+    position: relative;
+}
+  
+.dsMenu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.dsMenu li::before,
+.dsMenu li::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+  transition: .5s;
+}
+
+.dsMenu li::after {
+  left: 0;
+  bottom: 0px;
+}
+
+.dsMenu li::before {
+  right: 0;
+  top: 0px;
+}
+
+.dsMenu li:hover::after,
+.dsMenu li:hover::before {
+  width: 100%;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+/* Slider Styles */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 34rem; /* tăng chiều cao */
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.7s ease-in-out;
+  }
+  
+  .slider-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .slider-title {
+    font-size: 2.5rem; /* lớn hơn */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .slider-desc {
+    max-width: 80%;
+    font-size: 1.1rem;
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2); /* transparent background */
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 9999px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 1;
+  }
+  
+  .slider-btn:hover {
+    background: #e5e5e5;
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .slider-btn.prev {
+    left: 1rem;
+  }
+  
+  .slider-btn.next {
+    right: 1rem;
+  }
+  
+  /* Auto Slide Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .slider-image {
+    animation: fadeIn 1s ease-in-out;
+  }
+   
+  /* Feature Card Styles */
+  .feature-card {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-img {
+    height: 9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-desc {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .feature-btn {
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.75rem;
+  }
+  
+  .exam-prep-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  .exam-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .exam-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .exam-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .exam-info h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .exam-info p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+    .exam-info-box {
+    position: fixed;
+    bottom: 20px; /* Cách đáy trang 20px */
+    left: 20px; /* Cách bên trái trang 20px */
+    background-color: #ffffff; /* Màu nền trắng */
+    border: 1px solid #ccc; /* Viền màu xám */
+    border-radius: 8px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    z-index: 1000; /* Đảm bảo nằm trên các phần tử khác */
+    width: 250px; /* Độ rộng cố định */
+  }
+  
+  .exam-info-box .exam-link {
+    text-decoration: none; /* Xóa gạch chân */
+    color: #333; /* Màu chữ */
+  }
+  
+  .exam-info-box .exam-title {
+    font-size: 18px; /* Kích thước chữ tiêu đề */
+    font-weight: bold; /* Chữ đậm */
+    margin-bottom: 10px; /* Khoảng cách dưới */
+  }
+  
+  .exam-info-box .time-left {
+    font-size: 16px; /* Kích thước chữ thời gian */
+    color: #007bff; /* Màu xanh dương */
+  }
+  

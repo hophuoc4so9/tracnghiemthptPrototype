@@ -1,0 +1,38 @@
+.search-filter-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép wrap trên màn hình nhỏ */
+    align-items: center;
+    gap: 16px;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Trên màn hình lớn */
+  .search-input {
+    flex: 7; 
+  }
+  .select-item {
+    flex: 1; 
+  }
+  
+  .search-filter-container .ant-input-search,
+  .search-filter-container .ant-select-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Media query cho màn hình nhỏ */
+  @media screen and (max-width: 768px) {
+    .search-filter-container {
+      align-items: stretch;
+      height: auto;
+    }
+    .search-input,
+    .select-item {
+      flex: none;
+      width: 100%; /* chiếm 100% chiều rộng */
+      height: 40px; /* đặt chiều cao cố định cho mỗi thành phần, bạn có thể điều chỉnh */
+    }
+  }
+  

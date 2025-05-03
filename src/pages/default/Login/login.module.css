@@ -1,0 +1,53 @@
+/* Login.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  height: 80vh;
+  background: linear-gradient(135deg, #d0e1ff 0%, #eee4f9 100%);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.loginForm {
+  background: linear-gradient(135deg, #9abaf2 0%, #d7b2ff 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.alert {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+

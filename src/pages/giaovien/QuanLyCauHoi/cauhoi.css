@@ -1,0 +1,20 @@
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity)) /* #dcfce7 */;
+}
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity)) /* #fee2e2 */;
+}
+.btn-w {
+  background-color: red !important;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: white;
+}
+.btn-w:hover {
+  color: white;
+  font-weight: bold;
+}

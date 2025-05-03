@@ -1,0 +1,122 @@
+.containerKetQua {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+}
+
+.timer-column {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question-column {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timer {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.timer.critical {
+  background-color: #ffcccc;
+  color: #ff0000;
+}
+
+.question-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.question-nav button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.question-nav button:hover {
+  background-color: #0056b3;
+}
+
+.question-nav button.active {
+  background-color: #28a745;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+/* Container chính */
+.containerKetQua {
+  padding: 1rem;
+}
+
+/* Box hiển thị các câu hỏi (gộp thi chính và phần nghe) */
+.question-box {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+  margin-bottom: 1rem;
+}
+
+/* Style cho timer */
+.timer {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.timer.critical {
+  background-color: #ffe6e6;
+  color: #d9534f;
+}
+
+/* Navigation button style */
+.question-nav button {
+  margin: 0.2rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.question-nav button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading overlay cho lời khuyên */
+.loading-overlay {
+  padding: 1rem;
+}
+
