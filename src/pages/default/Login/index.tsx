@@ -110,9 +110,9 @@ export const Login = () => {
             Đăng nhập
           </button>
 
-          <div className="forget-password">
+          {/* <div className="forget-password">
             <a href="/forgetPass">Quên mật khẩu?</a>
-          </div>
+          </div> */}
           <div className="formFooter">
             <p>
               Chưa có tài khoản? <a href="/SignUp">Đăng ký ngay</a>

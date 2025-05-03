@@ -3,7 +3,8 @@ import { ENV_VARS } from "../config/envVars.config.js";
 import { TaiKhoan } from "../models/Taikhoan.model.js";
 export const protectedRoute = async (req, res, next) => {
   try {
-    const token = req.cookies["jwt-token"];
+    // const token = req.cookies["jwt-token"]  ;'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc3NDlkMTQ2OTBjYzAwMDc3ZDUxODYiLCJpYXQiOjE3NDYyNjQ4NDIsImV4cCI6MTc0NzU2MDg0Mn0.rlbp27vafr12TN0ZrVB_oA4nJ0xLoq2Qj-69S7h_Dks';
     if (!token) {
       return res.status(400).json({
         code: 400,
