@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+    volumes:
+      - ./backend:/app/backend
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  tester:
+    build:
+      context: .
+    command: ["sh", "-c", "/app/wait-for-it.sh backend:5000 -- node /app/backend/testThoiGianThucThi.js"]
+    depends_on:
+      - backend
+    env_file:
+      - ./.env
+    volumes:
+      - ./backend:/app/backend
